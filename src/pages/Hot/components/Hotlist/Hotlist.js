@@ -1,14 +1,14 @@
 import React from 'react'
 
 export default function Hotlist(props) {
-    const { hotlist } = props
+    const { hotlist, toSong } = props
     const hotlist20 = hotlist.filter((i, index) => index < 20)
     return (
         <div className="hot">
             {
                 hotlist20.map((item, index) => {
                     return (
-                        <div className="news_list" key={item.id}>
+                        <div className="news_list" key={item.id} onClick={() => toSong(item.id)} >
                             <div className={index <= 2 ? "list_index list_red" : "list_index"}>{(index + 1 + "").padStart(2, '0')}</div>
                             <div className="news_list_item">
                                 <div className="news_list_item_fl">

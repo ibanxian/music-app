@@ -11,12 +11,16 @@ class Playlist extends Component {
         let id = this.props.match.params.id
         reqPlayList(id) // 触发歌单列表
     }
+    // 去听音乐
+    toSong(id) {
+        this.props.history.push("/song/" + id)
+    }
     render() {
         const { playlist } = this.props
         return (
             <div className="playlist">
                 {playlist.id ? <Top playlist={playlist}></Top> : null}
-                {playlist.id ? <List playlist={playlist}></List> : null}
+                {playlist.id ? <List playlist={playlist} toSong={(id)=>this.toSong(id)}></List> : null}
                 <div className="footer">
                     <a href="https://github.com/ibanxian/music-app">打开GitHub，发现更多好音乐</a>
                 </div>

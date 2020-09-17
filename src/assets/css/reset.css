@@ -481,8 +481,8 @@ html{
 .song_bg{
     position: absolute;
     height: 100%;
-    min-width: 320px;
-    opacity: 1;
+    width: 100%;
+    box-sizing: border-box;
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: #161824;
@@ -490,6 +490,21 @@ html{
     transform: scale(1.5);
     transform-origin: center top;
     transition: opacity .3s linear;
+    z-index: 1;
+}
+.song_bg:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 从父元素继承 background 属性的设置 */
+    background: inherit;
+    z-index: 2;
+    background-color: rgba(0,0,0,.5);
+    filter: blur(0.01rem) contrast(.4) brightness(.5);
+    transition: 1.0s filter;
 }
 .song .back{
     left: 0.1rem;
@@ -590,4 +605,56 @@ html{
     z-index: 10;
     background: url("../img/playbt.png") 0 0 no-repeat;
     background-size: contain;
+}
+.song_name{
+    position: absolute;
+    margin-top: 0.1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.18rem;
+    line-height: 1.1;
+    color: #fefefe;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    z-index: 10;
+}
+.song_name span{
+    color: #fefefe;
+}
+.song_name b{
+    font-size: 0.16rem;
+    color: hsla(0,0%,100%,.6);
+}
+/* 歌词 */
+.outer{
+    height:1.5rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    margin-top: 0.35rem;
+}
+.inner{
+    height: auto;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0.5rem;
+    transition: all 0.2s;
+}
+.songitem{
+    color: #fff;
+    height: 0.5rem;
+    font-size: 0.15rem;
+    line-height: 0.5rem;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.select{
+    font-size:0.2rem;
+    color: #E91E63;
 }

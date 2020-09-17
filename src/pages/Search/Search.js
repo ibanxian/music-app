@@ -40,6 +40,10 @@ class Search extends Component {
         reqSearchList() // 清空搜索列表
         reqSearch(value) // 触发搜索结果
     }
+     // 去听音乐
+     toSong(id) {
+        this.props.history.push("/song/" + id)
+    }
     render() {
         const { searchhot, searchlist, search } = this.props
         const { value } = this.state
@@ -60,7 +64,7 @@ class Search extends Component {
                     {searchlist.length === 0 && search.length === 0 ? <HotList searchhot={searchhot} onSearch={(value) => this.onSearch(value)}></HotList> : null}
 
                     {/* 搜索结果 */}
-                    {search.length > 0 ? <SearchResult search={search}></SearchResult> : null}
+                    {search.length > 0 ? <SearchResult search={search} toSong={(id)=>this.toSong(id)}></SearchResult> : null}
 
 
                 </div>

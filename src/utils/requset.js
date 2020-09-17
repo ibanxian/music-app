@@ -92,3 +92,21 @@ export const reqSongUrl = (params) => {
         params: params
     })
 }
+
+// 歌曲详情（图片）
+export const reqSongImg = (params) => {
+    return axios({
+        url: "/song/detail",
+        method: "get",
+        params: params
+    })
+}
+
+// 歌词
+export const reqSongLyric = (params) => {
+    return axios({
+        url: "/lyric",
+        method: "get",
+        params: params
+    })
+}

@@ -9,6 +9,10 @@ class Hot extends Component {
         const { reqhotlist } = this.props
         reqhotlist() // 触发列表
     }
+    // 去听音乐
+    toSong(id) {
+        this.props.history.push("/song/" + id)
+    }
     render() {
         const { hotlist, hottime } = this.props
         return (
@@ -19,7 +23,7 @@ class Hot extends Component {
                         <div className="hottime">更新日期：{hottime}</div>
                     </div>
                 </div>
-                <Hotlist hotlist={hotlist}></Hotlist>
+                <Hotlist hotlist={hotlist} toSong={(id)=>this.toSong(id)}></Hotlist>
             </div>
         )
     }

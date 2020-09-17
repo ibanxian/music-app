@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function List(props) {
-    const { playlist } = props
+    const { playlist, toSong } = props
     return (
         <div className="play_list">
             <h3>歌曲列表</h3>
@@ -9,7 +9,7 @@ export default function List(props) {
                 {
                     playlist.tracks.map((item, index) => {
                         return (
-                            <div className="news_list" key={item.id}>
+                            <div className="news_list" key={item.id} onClick={() => toSong(item.id)}>
                                 <div className="list_index">{(index + 1 + "").padStart(2, '0')}</div>
                                 <div className="news_list_item">
                                     <div className="news_list_item_fl">

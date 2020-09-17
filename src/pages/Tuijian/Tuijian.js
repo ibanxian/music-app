@@ -17,7 +17,7 @@ class Tuijian extends Component {
     toPlayList(id) {
         this.props.history.push("/playlist/" + id)
     }
-    // 取听音乐
+    // 去听音乐
     toSong(id) {
         this.props.history.push("/song/" + id)
     }

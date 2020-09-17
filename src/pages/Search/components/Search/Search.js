@@ -1,14 +1,14 @@
 import React from 'react'
 
 export default function Search(props) {
-    const { search } = props
+    const { search, toSong } = props
     return (
         <div className="Search_list">
             <h3>最佳匹配</h3>
             {
                 search.map((item, index) => {
                     return (
-                        <div className="news_list" key={item.id}>
+                        <div className="news_list" key={item.id} onClick={() => toSong(item.id)}>
                             <div className="news_list_item">
                                 <div className="news_list_item_fl">
                                     <div className="news_title">{item.name}</div>

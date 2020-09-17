@@ -21,7 +21,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 //测试
 // store.dispatch(reqSongUrlAction())
 
-//添加监听
+// 添加监听
 store.subscribe(() => {
     console.log(store.getState());
 })
