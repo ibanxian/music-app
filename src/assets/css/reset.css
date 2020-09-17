@@ -553,6 +553,9 @@ html{
 .song_circling{
     animation: circling 20s linear 0.5s infinite;
 }
+.song_pause{
+    animation-play-state: paused;
+}
 .song_img img{
     width: 100%;
     vertical-align: middle;

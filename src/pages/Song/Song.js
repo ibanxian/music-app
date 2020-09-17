@@ -37,14 +37,15 @@ class Song extends Component {
             // let duration = audio.duration; // 歌曲总时间 183.12332
             // 转换时间格式
             let transTime = (Math.floor(currentTime / 60) + '').padStart(2, '0') + ":" + (Math.floor(currentTime % 60) + '').padStart(2, '0') // 当前时间
-            // let transTime = (Math.floor(currentTime / 60) + '').padStart(2, '0') + ":" + (Math.floor(currentTime % 60) + '').padStart(2, '0')+((currentTime-Math.floor(currentTime)+'').slice(1,5)) // 当前时间
             // let transTime2 = (Math.floor(duration / 60) + '').padStart(2, '0') + ":" + (Math.floor(duration % 60) + '').padStart(2, '0') // 总时间
+
+            // let transTime = (Math.floor(currentTime / 60) + '').padStart(2, '0') + ":" + (Math.floor(currentTime % 60) + '').padStart(2, '0')+((currentTime-Math.floor(currentTime)+'').slice(1,5)) // 当前时间  9位
+
             // 当歌曲当前时间和歌词里time时间一致，跳转歌词
             let index = songlyric.findIndex(item => item.time === transTime)
 
             // 通过计数器比较歌词
             // let index = 0;
-            console.log(currentTime);
             // for (let i = 0; i < songlyric.length; i++) {
             //     index = i;
             //     if (songlyric[i].num > currentTime) {
@@ -136,12 +137,12 @@ class Song extends Component {
                     <div className={isok ? "song_disc circling" : "song_disc"}>
                         <div className="song_turn">
                             <div className="song_rollwrap">
-                                {songdetail.id ? <div className={isok ? "song_img song_circling" : "song_img"}>
+                                {songdetail.id ? <div className={isok ? "song_img song_circling" : "song_img song_circling song_pause"}>
                                     <img src={songdetail.al.picUrl + "?param=360y360"} alt="" />
                                 </div> : null}
                             </div>
                             <div className="song_lgour">
-                                <div className={isok ? "song_light song_circling" : "song_light"}></div>
+                                <div className={isok ? "song_light song_circling" : "song_light song_circling song_pause"}></div>
                             </div>
                         </div>
                         {isok ? null : <div className="song_plybtn"></div>}
